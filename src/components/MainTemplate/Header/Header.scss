@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 black;
+
+    &_logo {
+        background: url(../../../../public/finance.png) no-repeat center;
+        background-size: contain;
+        width: 100px;
+        height: 100px;
+    }
+
+    &_title {
+        margin: 0 auto;
+    }
+}

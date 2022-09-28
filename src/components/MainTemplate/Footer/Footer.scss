@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    flex: 0 0 auto;
+    background-color: #000;
+    color: #fff;
+    height: 100px;
+    padding: 20px;
+    position: sticky;
+    bottom: 0;
+
+    &_content {
+        margin: auto;
+    }
+}

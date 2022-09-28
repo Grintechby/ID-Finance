@@ -1,0 +1,62 @@
+{
+    "type": "object",
+    "properties": {
+        "signInf": {
+            "type": "object",
+            "properties": {
+                "mobilePhone": {
+                    "type": "string",
+                    "pattern": "^\\+375\\d{9}$"
+                },
+                "password": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 20
+                },
+                "confirmPassword": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 20
+                },
+                "email": {
+                    "type": "string",
+                    "pattern": "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+                }
+            }
+        },
+        "personInf": {
+            "type":"object",
+            "properties": {
+                "firstName": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 30
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 30
+                  },
+                  "birthday": {
+                    "type": "integer",
+                    "minimum": 18,
+                    "maximum": 90
+                  },
+                  "sex": {
+                    "type":"string",
+                    "oneOf":[
+                        {"enum":["Male", "Female"]}
+                    ]
+                  },
+                  "ocean": {
+                    "type":"string",
+                    "oneOf":[
+                        {"enum": ["Atlantic", "Pacific", "Indian", "Arctic"]}
+                    ]
+                  }
+            
+            }
+        }
+        
+    }
+}

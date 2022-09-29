@@ -20,12 +20,13 @@ interface InputProps {
     placeholder: string;
     value?: string;
     onChange?: (e:any) => void;
+    ref?: () => void;
 }
 
-const Input = ({ type, placeholder, value, onChange }: InputProps) => {
+const Input = ({ type, placeholder, value, onChange, ref }: InputProps) => {
     return (
         <>
-            <InputComponent onChange={onChange} value={value} type={type} placeholder={placeholder} />
+            <InputComponent ref={ref} onChange={onChange} value={value} type={type} placeholder={placeholder} />
         </>
     )
 }

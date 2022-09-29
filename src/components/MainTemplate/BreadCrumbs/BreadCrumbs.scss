@@ -1,0 +1,27 @@
+.breadcrumbs {
+    display: flex;
+    position: sticky;
+    top: 140px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0 0 20px;
+    max-width: 200px;
+
+    img {
+        width: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #80858B;
+
+        &:active {
+            color: red;
+        }
+
+        &:hover {
+            color: #000;
+        }
+    }
+}

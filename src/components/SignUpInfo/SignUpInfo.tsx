@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SignUpInfo.scss';
 import InputMask from 'react-input-mask';
 import Input from '../UI/Input/Input';
 import ButtonComponent from '../UI/Button/Button';
 import userSchema from '../../schemes/schema.json';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { setConfirmPassword, setEmail, setMobilePhone, setPassword, signUpSlice } from '../../store/reducers/signup';
+import { setConfirmPassword, setEmail, setMobilePhone, setPassword } from '../../store/reducers/signupSlice';
 import { useNavigate } from 'react-router-dom';
 import MainTemplate from '../MainTemplate/MainTemplate';
 
@@ -36,7 +36,7 @@ const SignUpInfo = () => {
     };
 
     const handleValidation = () => {
-        const valid = ajv.validate(userSchema.properties.signInf, { mobilePhone, email, password, confirmPassword });
+        const valid = ajv.validate(userSchema.properties.signInf, { mobilePhone, email, password});
         if (valid) {
             navigate('/personal_info', { replace: true })
         }

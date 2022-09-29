@@ -1,6 +1,6 @@
 import {configureStore, PreloadedState} from '@reduxjs/toolkit';
 import { combineReducers } from '@reduxjs/toolkit';
-import {initialState, signUpReducer, signUpSlice} from './reducers/signup';
+import {initialState, signUpReducer, signUpSlice} from './reducers/signupSlice';
 import userSchema from '../schemes/schema.json';
 import { personInfoReducer } from './reducers/personInfoSlice';
 

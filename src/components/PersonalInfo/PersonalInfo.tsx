@@ -60,7 +60,7 @@ const PersonalInfo = () => {
     return (
         <MainTemplate>
             <div className='personal__container'>
-                
+
                 <h2>Personal info</h2>
                 <Input onChange={addFirstName} value={firstName} placeholder='First name' type='text' />
                 <Input onChange={addLastName} value={lastName} placeholder='Last name' type='text' />
@@ -96,8 +96,8 @@ const PersonalInfo = () => {
                     <Checkbox id='pets' value='pets'>Pets</Checkbox>
                 </div>
                 <div className="buttons_box">
-                    <ButtonComponent onClick={handleValidation}>Complete</ButtonComponent>
                     <ButtonComponent onClick={() => navigate('/', { replace: true })}>Change SignUp</ButtonComponent>
+                    <ButtonComponent onClick={handleValidation}>Complete</ButtonComponent>
                 </div>
             </div>
             <div className={cn('overlay', !visible && 'hidden')} onClick={() => setVisible(!visible)}>

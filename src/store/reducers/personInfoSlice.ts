@@ -8,7 +8,7 @@ export const initialState = {
     birthday: NaN,
     date: '',
     sex: [''],
-    ocean: ['Atlantic']
+    ocean: 'Atlantic',
 }
 
 export const personInfoSlice = createSlice({
@@ -31,7 +31,7 @@ export const personInfoSlice = createSlice({
         },
         setOcean: (state, action) => {
             state.ocean = action.payload;
-        }
+        },
     }
 });
 

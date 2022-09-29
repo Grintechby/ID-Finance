@@ -1,11 +1,11 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Outlet, Route, RouteObject, Routes, useRoutes } from 'react-router-dom';
 import './App.css';
-import InformWindow from './components/InformWindow/InformWindow';
-import MainTemplate from './components/MainTemplate/MainTemplate';
 import PersonalInfo from './components/PersonalInfo/PersonalInfo';
 import SignUpInfo from './components/SignUpInfo/SignUpInfo';
-import Input from './components/UI/Input/Input';
+import useBreadcrumbs from 'use-react-router-breadcrumbs';
+import BreadCrumbs from './components/MainTemplate/BreadCrumbs/BreadCrumbs';
+
 
 function App() {
   return (
@@ -16,6 +16,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

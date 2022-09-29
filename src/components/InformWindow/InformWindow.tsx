@@ -2,13 +2,11 @@ import React from 'react';
 import './InformWindow.scss';
 import { useAppSelector } from '../../hooks/redux';
 import cn from 'classnames';
+import { InformWindowProps } from '../../types/types';
 
-interface InformWindowProps {
-    visible: boolean;
-}
 
 const InformWindow = ({visible}: InformWindowProps) => {
-    const { personInfo: { birthday, firstName, lastName, ocean, sex }, signUp: { email, mobilePhone } } = useAppSelector(state => state)
+    const { personInfo: { birthday, firstName, lastName, ocean, sex, hobby }, signUp: { email, mobilePhone } } = useAppSelector(state => state)
     return (
         <div className={cn('popup__container', !visible && 'hidden')}>
             <h3>Profile information</h3>
@@ -39,6 +37,10 @@ const InformWindow = ({visible}: InformWindowProps) => {
             <div className='ocean_box'>
                 <h4>Your favorite ocean</h4>
                 <p>{ocean} ocean</p>
+            </div>
+            <div className='hobby_box'>
+                <h4>Your Hobby</h4>
+                <p>{hobby}</p>
             </div>
         </div>
     )

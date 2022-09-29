@@ -5,6 +5,8 @@ export const initialState = {
     password: '',
     confirmPassword: '',
     email: '',
+    inputPass: ''
+    
 };
 
 export const signUpSlice = createSlice({
@@ -18,10 +20,15 @@ export const signUpSlice = createSlice({
             state.email = action.payload;
         },
         setPassword: (state, action) => {
-            state.password = action.payload;
+            state.inputPass = action.payload;
         },
         setConfirmPassword: (state, action) => {
             state.confirmPassword = action.payload;
+            if (state.inputPass === state.confirmPassword){
+                state.password = state.inputPass;
+            } else {
+                state.password = state.password;
+            }
         }
     }
 });

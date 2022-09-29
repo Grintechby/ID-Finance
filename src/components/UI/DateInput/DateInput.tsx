@@ -1,14 +1,6 @@
 import React from 'react';
+import { IDate } from '../../../types/types';
 
-interface IDate {
-    min: string;
-    max: string;
-    id: string;
-    placeholder: string;
-    children: React.ReactNode;
-    onChange?: (e:any) => void;
-    value?: string;
-}
 
 const DateInput = ({id, max, min, children, placeholder, value, onChange}:IDate) => {
     return (

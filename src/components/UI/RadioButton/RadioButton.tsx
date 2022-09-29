@@ -1,13 +1,6 @@
-import './RadioButton.scss';
 import React from 'react';
+import { IRadio } from '../../../types/types';
 
-interface IRadio {
-    value: string;
-    onChange: (e:any) => void;
-    name: string;
-    id: string;
-    children: React.ReactNode;
-}
 
 const RadioButton = ({onChange, value, id, name, children}:IRadio) => {
     return (
@@ -16,6 +9,6 @@ const RadioButton = ({onChange, value, id, name, children}:IRadio) => {
             <label htmlFor={id}>{children}</label>
         </div>
     )
-}
+};
 
 export default RadioButton;

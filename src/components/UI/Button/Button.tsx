@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IButton } from '../../../types/types';
 
 
 const Button = styled.button`
@@ -19,17 +20,12 @@ const Button = styled.button`
     }
 `;
 
-interface IButton {
-    onClick: () => void;
-    children: React.ReactNode;
-}
-
 const ButtonComponent = ({ onClick, children }: IButton) => {
     return (
         <>
             <Button onClick={onClick} >{children}</Button>
         </>
     )
-}
+};
 
-export default ButtonComponent
+export default ButtonComponent;

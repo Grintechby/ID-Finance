@@ -48,6 +48,15 @@
                     "oneOf":[
                         {"enum": ["Atlantic", "Pacific", "Indian", "Arctic"]}
                     ]
+                  },
+                  "hobby":{
+                    "type":"string",
+                    "anyOf":[
+                        {"pattern":"Sport"},
+                        {"pattern":"Beauty"},
+                        {"pattern":"IT"},
+                        {"pattern":"Pets"}
+                    ]
                   }
             
             }

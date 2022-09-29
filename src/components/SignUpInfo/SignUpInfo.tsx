@@ -17,7 +17,7 @@ const SignUpInfo = () => {
     const ajv = new Ajv();
 
     const dispatch = useAppDispatch();
-    const { mobilePhone, email, password, confirmPassword } = useAppSelector(state => state.signUp);
+    const { mobilePhone, email, password, confirmPassword, inputPass } = useAppSelector(state => state.signUp);
 
     const addPhone = (e: any) => {
         dispatch(setMobilePhone(e.target.value.split(' ').join('')))
@@ -27,16 +27,16 @@ const SignUpInfo = () => {
         dispatch(setEmail(e.target.value))
     };
 
-    const addPassword = (e: any) => {
+    const addPassword =(e:any) => {
         dispatch(setPassword(e.target.value))
-    };
+    }
 
-    const addConfirmPassword = (e: any) => {
-        dispatch(setConfirmPassword(e.target.value))
-    };
+    const addConfirmPass = (e:any) => {
+        dispatch(setConfirmPassword(e.target.value));
+    }
 
     const handleValidation = () => {
-        const valid = ajv.validate(userSchema.properties.signInf, { mobilePhone, email, password});
+        const valid = ajv.validate(userSchema.properties.signInf, {mobilePhone, password, email});
         if (valid) {
             navigate('/personal_info', { replace: true })
         }
@@ -46,11 +46,11 @@ const SignUpInfo = () => {
     return (
         <MainTemplate>
             <div className='signup__container'>
-                <h2>Регистрация</h2>
-                <InputMask value={mobilePhone} onChange={addPhone} className='sc-bczRLJ drLNjE' mask='+375\ 99 999 99 99' placeholder='Номер телефона' />
+                <h2>Registration</h2>
+                <InputMask value={mobilePhone} onChange={addPhone} className='sc-bczRLJ drLNjE' mask='+375\ 99 999 99 99' placeholder='Phone number' />
                 <Input onChange={addEmail} value={email} placeholder='Email' type='email' />
-                <Input onChange={addPassword} value={password} placeholder='Пароль' type='password' />
-                <Input onChange={addConfirmPassword} value={confirmPassword} placeholder='Подтверждение пароля' type='password' />
+                <Input onChange={addPassword} value={inputPass} placeholder='Password' type='password' />
+                <Input onChange={addConfirmPass} value={confirmPassword} placeholder='Confirm password' type='password' />
                 <ButtonComponent onClick={handleValidation}>Next</ButtonComponent>
             </div>
         </MainTemplate>

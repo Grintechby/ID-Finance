@@ -1,7 +1,6 @@
-import {configureStore, PreloadedState} from '@reduxjs/toolkit';
+import {configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from '@reduxjs/toolkit';
-import {initialState, signUpReducer, signUpSlice} from './reducers/signupSlice';
-import userSchema from '../schemes/schema.json';
+import { signUpReducer } from './reducers/signupSlice';
 import { personInfoReducer } from './reducers/personInfoSlice';
 
 export const rootReducer = combineReducers({
@@ -15,6 +14,6 @@ export const configStore = () => {
     })
 };
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof configStore>
-export type AppDispatch = AppStore['dispatch']
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof configStore>;
+export type AppDispatch = AppStore['dispatch'];

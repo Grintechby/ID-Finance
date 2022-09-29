@@ -1,13 +1,6 @@
 import React from 'react';
+import { ICheckbox } from '../../../types/types';
 
-
-interface ICheckbox {
-    id: string;
-    value: string;
-    children: React.ReactNode;
-    onChange?: (e:any) => void;
-    checked?: boolean;
-}
 
 const Checkbox = ({id, value, children, checked, onChange}:ICheckbox) => {
     return (
